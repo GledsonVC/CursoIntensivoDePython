@@ -29,9 +29,10 @@ class AlienInvasion:
         """Inicia o loop principal do jogo"""
         while True:
             # Observa eventos de teclado e mouse
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            # for event in pygame.event.get():
+            #     if event.type == pygame.QUIT:
+            #         sys.exit()
+            self._check_events()
             
             # Redesenha a tela durante cada passagem pelo loop
             #self.screen.fill(self.bg_color)
@@ -41,6 +42,14 @@ class AlienInvasion:
             # Deixa a tela desenhada mais recente visível
             pygame.display.flip()
             self.clock.tick(60)
+    
+    
+    def _check_events(self):
+        """Responde as teclas pressionadas e a eventos de mouse"""
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
 
 if __name__ == '__main__':
     # Cria uma instancia do jogo e execute o jogo
