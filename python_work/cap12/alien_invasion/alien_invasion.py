@@ -34,13 +34,14 @@ class AlienInvasion:
             #         sys.exit()
             self._check_events()
             
-            # Redesenha a tela durante cada passagem pelo loop
-            #self.screen.fill(self.bg_color)
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
+            # # Redesenha a tela durante cada passagem pelo loop
+            # #self.screen.fill(self.bg_color)
+            # self.screen.fill(self.settings.bg_color)
+            # self.ship.blitme()
 
-            # Deixa a tela desenhada mais recente visível
-            pygame.display.flip()
+            # # Deixa a tela desenhada mais recente visível
+            # pygame.display.flip()
+            self._update_screen()
             self.clock.tick(60)
     
     
@@ -49,7 +50,14 @@ class AlienInvasion:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+    
 
+    def _update_screen(self):
+        """Atualiza as imagens na tela e mude para a nova tela"""
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        pygame.display.flip()
 
 if __name__ == '__main__':
     # Cria uma instancia do jogo e execute o jogo
