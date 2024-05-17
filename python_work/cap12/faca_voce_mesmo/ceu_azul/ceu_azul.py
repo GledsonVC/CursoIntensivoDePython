@@ -19,7 +19,7 @@ class CeuAzul:
         pygame.display.set_caption("Céu azul")
 
 
-    def rodar_jogo(self):
+    def rodar_tela(self):
         """Inicia o loop principal do do jogo"""
         while True:
             self._verificar_eventos()
@@ -42,4 +42,4 @@ class CeuAzul:
 if __name__ == '__main__':
     # Cria uma instancia do jogo e execute o jogo
     ca = CeuAzul()
-    ca.rodar_jogo()
+    ca.rodar_tela()
