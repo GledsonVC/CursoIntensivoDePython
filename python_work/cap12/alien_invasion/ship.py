@@ -28,9 +28,10 @@ class Ship:
 
     def update(self):
         """Atualiza a posição da espaçonave com base nas flags de movimento"""
-        if self.moving_right:
+        # Atualizando o valor x da espaçonave, não o rect
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             self.x += self.settings.ship_speed
-        if self.moving_left:
+        if self.moving_left and self.rect.left < 0:
             self.x -= self.settings.ship_speed
         
         # Atualiza o objeto rect de self.x
