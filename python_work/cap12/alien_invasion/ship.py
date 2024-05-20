@@ -19,11 +19,14 @@ class Ship:
 
         # Flag de movimento; começa com uma espaçonave que não está se movendo
         self.moving_right = False
+        self.moving_left = False
     
 
     def update(self):
         if self.moving_right:
             self.rect.x += 1
+        if self.moving_left:
+            self.rect.x -= 1
     
 
     def blitme(self):
