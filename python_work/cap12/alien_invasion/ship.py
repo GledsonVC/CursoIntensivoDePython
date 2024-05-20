@@ -4,7 +4,6 @@ import pygame
 class Ship:
     """Classe para cuidar da espaçonave"""
 
-
     def __init__(self, ai_game):
         """Inicia a espaçonave e defina sua posição inicial"""
         self.screen = ai_game.screen
