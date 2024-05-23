@@ -10,3 +10,4 @@ class Configuracoes:
 
         # Configurações da nave
         self.velocidade_nave = 3
+

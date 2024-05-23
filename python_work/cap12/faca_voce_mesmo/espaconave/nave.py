@@ -42,7 +42,6 @@ class Nave:
         self.rect.x = self.x
         self.rect.y = self.y
     
-        
     
     def carregame(self):
         """Desenha a nave em sua localização atual"""

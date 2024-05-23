@@ -24,7 +24,6 @@ class Espaconave:
         self.nave = Nave(self)
 
 
-
     def run_game(self):
         """Inicia o loop principal do jogo"""
         # loop para observar eventos e ir atualizando a tela
@@ -52,7 +51,6 @@ class Espaconave:
             # Para de movimentar a nave quando a seta não precionada
             elif event.type == pygame.KEYUP:
                 self._checar_tecla_solta(event)
-
 
 
     def _checar_atualizacao(self):
@@ -110,3 +108,4 @@ if __name__ == '__main__':
     # Cria uma instancia do jogo e executa o jogo
     es = Espaconave()
     es.run_game()
+
