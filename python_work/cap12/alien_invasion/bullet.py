@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Bullet(Sprite):
     """Classe para gerenciar os projéteis disparados da espaçonave"""
 
