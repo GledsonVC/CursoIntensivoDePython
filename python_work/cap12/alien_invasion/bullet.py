@@ -19,5 +19,18 @@ class Bullet(Sprite):
 
         # Armazena a posição do projétil com um float
         self.y = float(self.rect.y)
-        
+    
+
+    def update(self):
+        """Desloca o projétil verticalmente pela tela"""
+        # Atualiza a posição exata do projétil
+        self.y -= self.settings.bullet_speed
+        # Atualiza a posição do react
+        self.rect.y = self.y
+
+
+    def draw_bullet(self):
+        """Desenha o projétil na tela"""
+        pygame.draw.rect(self.screen, self.color, self.rect)
+
         
