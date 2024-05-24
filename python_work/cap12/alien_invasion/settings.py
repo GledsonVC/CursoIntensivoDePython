@@ -11,6 +11,11 @@ class Settings:
 
         # Configurações da espaçonave
         self.ship_speed = 1.5
-    
+        
+        # Configurações do projétil
+        self.bullet_speeed = 2.0
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = (60, 60, 60)
 
 
