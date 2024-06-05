@@ -16,7 +16,10 @@ class AlienInvasion:
         self.settings = Settings()
         # self.screen = pygame.display.set_mode(
         #     (self.settings.screen_width, self.settings.screen_height))
-        self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height)
+            #(0,0), pygame.FULLSCREEN
+            )
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
@@ -34,6 +37,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
             self.clock.tick(60)
     
@@ -75,6 +79,9 @@ class AlienInvasion:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
     
+    def _update_aliens(self):
+        """Atualiza as posições de todos os alienígenas na frota"""
+        self.aliens.update()
 
     def _update_bullets(self):
         """Atualiza a posição dos projéteis e descarta projéteis antigos"""
