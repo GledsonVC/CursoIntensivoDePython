@@ -90,7 +90,10 @@ class AlienInvasion:
         collision =  pygame.sprite.groupcollide(
             self.bullets, self.aliens, True, True)
         
-    
+        if not self.aliens:
+            # Destroi os projéteis existentes e cria uma frota nova
+            self.bullets.empty()
+            self._create_fleet()
 
     def _update_aliens(self):
         """
