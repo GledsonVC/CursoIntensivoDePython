@@ -85,13 +85,15 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
         
-        # Verifica se algum projétil atingiu um alienígena
-        # Se sim, descarta o projétil e o alienígena
-        collision =  pygame.sprite.groupcollide(
+        self._check_bullet_alien_collistions()
+    
+    def _check_bullet_alien_collistions(self):
+        """Responde à colisões alienígenas"""
+        collisions = pygame.sprite.groupcollide(
             self.bullets, self.aliens, True, True)
         
         if not self.aliens:
-            # Destroi os projéteis existentes e cria uma frota nova
+            # Destrói os projéteis existentes e cria uma frota nova
             self.bullets.empty()
             self._create_fleet()
 
